@@ -9,7 +9,7 @@ import MetamaskPurple from '../../public/assets/images/MetamaskPurple.svg';
 import Metamask from '../../public/assets/images/Metamask.svg';
 import SignInLink from 'components/Connector';
 import { useIsMetaMask } from 'hooks';
-import { useEffect, useCallback, useState } from 'react';
+import { useEffect, useCallback } from 'react';
 import MobileBetaStatus from 'components/MobileBetaStatus';
 import { useRedirect } from 'hooks';
 import { useRouter } from 'next/router';
@@ -99,10 +99,20 @@ export default function Landing() {
           </MaybeHideOnMobileConnector>
         </ConnectorList>
       </MaxContentWidth>
-      <MobileBetaStatus />
+      <BottomRight>
+        <MobileBetaStatus />
+      </BottomRight>
     </Page>
   );
 }
+
+const BottomRight = styled.div`
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+`;
+
 const MaxContentWidth = styled.div`
   max-width: 600px;
   width: 100%;

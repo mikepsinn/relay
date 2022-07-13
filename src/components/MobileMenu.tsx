@@ -75,9 +75,8 @@ export default function MobileMenu({
       onTouchMove={onTouchMove}
       showMenu={showMenu}
       ref={slider}>
-      <MobileBetaStatus />
       <Header>
-        <WordMark>Hello.</WordMark>
+        <MobileBetaStatus />
         <ClickableImage
           src="/assets/images/ArrowLeftWhite.svg"
           height={20}
@@ -231,17 +230,6 @@ const Header = styled.div`
   padding-right: 40px;
   padding-left: 40px;
   margin-bottom: 3rem;
-`;
-
-const WordMark = styled.h1`
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.01em;
-  color: #ffffff;
 `;
 
 const FullHeightSlider = styled.div<StyleProps>`
