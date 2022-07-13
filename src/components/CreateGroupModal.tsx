@@ -86,9 +86,6 @@ export const CreateGroupModal: FunctionComponent<CreateGroupModalProps> = ({
           />
         </ModalFormItem>
       </ModalForm>
-      {peerAddresses.size > 0 || (
-        <AtLeastOneAddress>Enter at least one address...</AtLeastOneAddress>
-      )}
 
       {peerAddresses.size > 0 && (
         <AddressesList>

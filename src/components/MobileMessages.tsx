@@ -17,7 +17,6 @@ import {
 import MobileStatusCard from './MobileStatusCard';
 import { useRouterEnsData } from 'hooks';
 import MobileLoadingEnsName from './MobileLoadingEnsName';
-import background from '../../public/assets/images/Artboard1.png';
 
 export default function Messages() {
   const { isMobile } = useDeviceDetect();
@@ -207,7 +206,7 @@ export default function Messages() {
                 <MobileMessagesBucket
                   key={index}
                   messages={bucketMessages}
-                  peerAddress={peerAddress}
+                  clientAddress={xmtp.client.address}
                   startDate={bucketMessages[0].sent}
                   sentByAddress={bucketMessages[0].senderAddress}
                 />
