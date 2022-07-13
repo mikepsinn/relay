@@ -21,7 +21,6 @@ export default function Landing() {
   const { connect, connectors, isConnected } = useConnect();
   const isMetaMask = useIsMetaMask();
   const { doRedirectBack } = useRedirect();
-  const [userDidConnect, setUserDidConnect] = useState<boolean>(false);
 
   const metamaskConnector = connectors.find(
     (connector) => connector.id === 'injected'
@@ -36,19 +35,16 @@ export default function Landing() {
   );
 
   const handleClickMetamask = useCallback(() => {
-    setUserDidConnect(true);
     connect(metamaskConnector);
     /* eslint-disable-next-line */
   }, []);
 
   const handleClickCoinbase = useCallback(() => {
-    setUserDidConnect(true);
     connect(coinbaseConnector);
     /* eslint-disable-next-line */
   }, []);
 
   const handleClickWalletConnect = useCallback(() => {
-    setUserDidConnect(true);
     connect(walletConnectConnector);
     /* eslint-disable-next-line */
   }, []);
@@ -58,9 +54,7 @@ export default function Landing() {
       if (doRedirectBack) {
         doRedirectBack();
       } else {
-        if (userDidConnect) {
-          router.push('/conversations');
-        }
+        router.push('/conversations');
       }
     }
     /* eslint-disable-next-line */
