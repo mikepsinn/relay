@@ -44,7 +44,7 @@ export default function GroupConversations() {
           peerAddresses,
           `Created at datetime: ${new Date()}`
         );
-        router.push('/g' + groupId);
+        router.push('/g/' + groupId);
       } catch (err) {
         console.error(err);
       }
